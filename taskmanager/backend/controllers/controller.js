@@ -12,7 +12,7 @@ const getTasks = async (request, response) => {
 
 const getSingleTask = async (request, response) => {
     try {
-        const { id } = request.params
+        const { id } = request.params 
 
         const singleTask = await Task.findById(id)
         return response.status(200).json(singleTask)
@@ -61,10 +61,6 @@ const deleteTask = async (request, response) => {
 const updateTask = async (request, response) => {
     try {
         const { title, description, dueDate } = request.body
-
-        if(!title || !description || !dueDate) {
-            return response.status(401).json({ message: "Please enter all the neccessary fields" })
-        }
 
         const { id } = request.params
 
