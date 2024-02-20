@@ -44,7 +44,7 @@ const Home = () => {
                 <p className='italic font-medium'>{description}</p>
                 <p className='italic'>{dueDate}</p>
                 <div className='flex gap-x-5 mt-5 cursor-pointer justify-center'>
-                  <Link>
+                  <Link to={`/tasks/edit/${task._id}`}>
                     <AiTwotoneEdit className='bg-blue-500' />
                   </Link>
                   <Link to={`/tasks/delete/${task._id}`}>
