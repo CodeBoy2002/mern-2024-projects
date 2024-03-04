@@ -58,15 +58,26 @@ const Create = () => {
         <div className="flex gap-5 justify-center m-5">
           <p className="font-bold mt-2">EMAIL:- </p>
           <input
-            type="text"
+            type="email"
             className="border rounded-md ring-2 shadow-lg shadow-slate-600 w-80 p-2"
-            name="phone"
+            name="email"
             value={user.email}
             onChange={handleChange}
             placeholder="Enter Email.."
           />
         </div>
+        <div className="flex gap-5 justify-center m-5">
+          <p className="font-bold mt-2">Country:- </p>
+          <select name="country" className="border p-2 mb-b ring rounded-md" onChange={handleChange}>
+            <option value="">Select Country</option>
+            <option value="USA">USA</option>
+            <option value="Canada">Canada</option>
+            <option value="India">India</option>
+            <option value="Japan">Japan</option>
+          </select>
+        </div>
       </form>
+      <button className="ml-[50%] ring ring-opacity-25 ring-neutral-600 mb-2 p-2 rounded-md bg-blue-500 hover:bg-blue-300 w-20 text-lg cursor-pointer font-bold">Add</button>
     </div>
   );
 };

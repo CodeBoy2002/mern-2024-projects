@@ -1,24 +1,38 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/Home'
 import Create from './pages/Create'
 import Update from './pages/Update'
 import Delete from './pages/Delete'
+import About from './pages/About'
 
 const App = () => {
   return (
     <div>
         <div className='bg-gray-200 border p-5 h-24 rounded-xl'>
           <div className='flex justify-between'>
-            <h3 className='font-bold cursor-pointer mt-auto uppercase'>Home</h3>
+            <h3 className='font-bold cursor-pointer mt-auto uppercase'>
+              <Link to='/'>
+                <p>Home</p>
+              </Link>
+            </h3>
             <div className='flex gap-3 '>
-              <h3 className='font-bold cursor-pointer bg-green-200 p-2 ring rounded-md shadow-lg hover:bg-green-500'>Create</h3>
-              <h3 className='font-bold cursor-pointer bg-red-200 p-2 ring rounded-md shadow-lg hover:bg-red-500'>AboutUs</h3>
+              <h3 className='font-bold cursor-pointer bg-green-200 p-2 ring rounded-md shadow-lg hover:bg-green-500'>
+                <Link to='/users/create'>
+                  <p>Create</p>
+                </Link>
+              </h3>
+              <h3 className='font-bold cursor-pointer bg-red-200 p-2 ring rounded-md shadow-lg hover:bg-red-500'>
+                <Link to='/users/about'>
+                  <p>AboutUs</p>
+                </Link>
+              </h3>
             </div>
           </div>
         </div>
         <Routes>
           <Route element={<Home/>} path='/'/>
           <Route element={<Create/>} path='/users/create'/>
+          <Route element={<About/>} path='/users/about'/>
           <Route element={<Update/>} path='/users/update/:id'/>
           <Route element={<Delete/>} path='/users/delete/:id'/>
         </Routes>
