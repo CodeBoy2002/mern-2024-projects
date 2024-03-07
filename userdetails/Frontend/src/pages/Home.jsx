@@ -9,7 +9,7 @@ const Home = () => {
         <h2 className='text-center font-bold text-lg m-5 underline decoration-5 hover:underline-offset-4 cursor-pointer'>USERS INFORMATION</h2>
         <table className='table-fixed border-separate border-spacing-px border border-slate-500'>
             <caption className='caption-top mb-1 font-semibold'>
-                Table:- Users And There General Information.
+                Table:- Users And There General Information. 
             </caption>
             <thead>
                 <tr>

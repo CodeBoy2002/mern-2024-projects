@@ -7,7 +7,7 @@ import About from './pages/About'
 
 const App = () => {
   return (
-    <div>
+    <div className='flex flex-col space-y-52'>
         <div className='bg-gray-200 border p-5 h-24 rounded-xl'>
           <div className='flex justify-between'>
             <h3 className='font-bold cursor-pointer mt-auto uppercase'>
