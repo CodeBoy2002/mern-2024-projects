@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   const [students, setStudents] = useState([])
@@ -25,8 +26,13 @@ const Home = () => {
   }
 
   return (
-    <div className=''>
+    <div className='flex flex-col justify-center'>
     <h1 className='font-bold text-center text-xl underline my-5'>STUDENT DETAILS</h1>
+    <div className='flex justify-center mb-5 mt-5 bg-red-500 text-white font-bold w-20 p-3 rounded-md ml-[45%]'>
+      <Link to='/create'>
+        <p>Create</p>
+      </Link>
+    </div>
     <table className='table-fixed border-separate border border-slate-500'>
       <thead>
         <tr>
@@ -38,6 +44,7 @@ const Home = () => {
           <th className='border border-slate-600'>Branch</th>
           <th className='border border-slate-600'>Phone</th>
           <th className='border border-slate-600'>Email</th>
+          <th className='border border-slate-600'>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -51,6 +58,17 @@ const Home = () => {
             <td className='border border-slate-700'>{student.branch}</td>
             <td className='border border-slate-700'>{student.phoneNumber}</td>
             <td className='border border-slate-700'>{student.emailId}</td>
+            <td className='border border-slate-700'>
+              <div className='flex gap-2'>
+              <Link to={`/delete/${student._id}`}>
+                <p className='bg-red-600 rounded-md p-1 w-5'>D</p>
+              </Link>
+              <Link to={`/update/${student._id}`}>
+                <p className='bg-green-600 rounded-md p-1 w-5'>U</p>
+              </Link>
+              </div>
+            </td>
+
           </tr>
         ))}
       </tbody>
