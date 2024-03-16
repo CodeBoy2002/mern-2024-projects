@@ -12,7 +12,7 @@ const CreateStudent = () => {
     phoneNum: "",
     emailId: "",
     branch: "",
-  });
+  })
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e) => {
