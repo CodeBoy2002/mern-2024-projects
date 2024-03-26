@@ -1,9 +1,28 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
 const customerSchema = mongoose.Schema({
-    name: String,
-    email: String,
-    purchasedProduct: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Juice' }]
+    name: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true
+    },
+    orderItem: {
+        type: String,
+        required: true
+    },
+    quantity: {
+        type: Number,
+        default: 1
+    },
+    orderDetails: {
+        type: mongoose.Schema.Types.String,
+        ref: 'Product'
+    }
+}, {
+    timestamps: true
 })
 
 const Customer = mongoose.model('Customer', customerSchema)
